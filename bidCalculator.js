@@ -1,19 +1,17 @@
-// rausfinden was x - je nach color
-// rausfinden was y - je nach jacks
-// -> return x*y
-// spezialcolors: null, nullouvert null hand, null ouvert hand
+// x is defined by the chosen color
+// y is defined by the amount and color of the jacks
+// -> return x*y -> value that can be bid up to
+// special modes : null, null ouvert null hand, null ouvert hand
 //  -> return x
-
-//kreuz = clubs, pik = sapdes, herz = hearts, karo = diamonds
 
 const bidCalculatorSkat = (color, ...jacks) => {
   let x, y;
   color = color.toLowerCase();
-  // jacks toLowerCase.. weil object
   jacks = jacks.map(function (item) {
     item = item.toLowerCase();
     return item;
   });
+
   // Defining x by the color you want to play
   if (color === "grand") {
     x = 24;
@@ -45,24 +43,24 @@ const bidCalculatorSkat = (color, ...jacks) => {
   }
 
   // Finding y
-  // mit 1, spiel 2
+  // with 1, play 2
   if (
     (jacks.includes("clubs") && !jacks.includes("spades"))
      ||
-    // ohne 1, spiel 2
+    // without 1, play 2
     (!jacks.includes("clubs") && jacks.includes("spades"))
   ) {
     y = 2;
     return x * y;
   }
 
-  // mit 2, spiel 3
+  // with 2, play 3
   if (
     (jacks.includes("clubs") &&
       jacks.includes("spades") &&
       !jacks.includes("hearts")) 
       ||
-    // ohne zwei spiel 3
+    // without 2, play 3
     (!jacks.includes("clubs") && 
     !jacks.includes("spades")
     && jacks.includes("hearts"))
@@ -70,14 +68,14 @@ const bidCalculatorSkat = (color, ...jacks) => {
     y = 3;
     return x * y;
   }
-  // ohne 3 spiel 4
+  // without 3, play 4
   if (
     (!jacks.includes("clubs") &&
       !jacks.includes("spades") &&
       !jacks.includes("hearts") &&
       jacks.includes("diamonds")) 
       ||
-    //mit 3 spiel 4
+      // with 3, play 4
     (jacks.includes("clubs") &&
       jacks.includes("spades") &&
       jacks.includes("hearts") &&
@@ -86,12 +84,12 @@ const bidCalculatorSkat = (color, ...jacks) => {
     y = 4;
     return x * y;
   }
-  // ohne 4 spiel 5
+  // without 4, play 5
   if (
 
     (!jacks.length)
       ||
-    // mit 4 spiel 5
+  // with 4, play 5
     (jacks.includes("clubs") &&
       jacks.includes("spades") &&
       jacks.includes("hearts") &&
@@ -107,14 +105,14 @@ console.log(bidCalculatorSkat("spades", "clubs", "hearts"));
 console.log(bidCalculatorSkat("hearts", "clubs", "hearts"));
 console.log(bidCalculatorSkat("diamonds", "clubs", "hearts"));
 
-// checking specials
+// checking special modes
 console.log(bidCalculatorSkat("null"));
 console.log(bidCalculatorSkat("null hand"));
 console.log(bidCalculatorSkat("null ouvert", "spades", "diamonds"));
 console.log(bidCalculatorSkat("null ouvert hand"));
 
 
-//checking y
+//checking Jacks
 console.log(bidCalculatorSkat("diamonds", "clubs")); 
 console.log(bidCalculatorSkat("hearts", "clubs")); 
 console.log(bidCalculatorSkat("clubs", "clubs", "spades")); 
@@ -122,6 +120,4 @@ console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts"));
 console.log(bidCalculatorSkat("clubs", "hearts", "diamonds"));
 console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts"))
 console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts", "diamonds"));
-;
-
 console.log(bidCalculatorSkat("grand")); 
