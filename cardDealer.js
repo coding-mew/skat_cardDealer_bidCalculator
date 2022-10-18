@@ -29,9 +29,9 @@ function randomDeck(array) {
       [ array[randomIndex], array[currentIndex]];
     }
     // 2.4 slice the array to deal 10 cards/person + 2 for skat
-    player1 = array.slice(0,9)
-    player2 = array.slice(10,19)
-    player3 = array.slice(20,29)
+    player1 = array.slice(0,10)
+    player2 = array.slice(10,20)
+    player3 = array.slice(20,30)
     skat = array.slice(30,32)
 
     return `\n Player 1 gets the following cards: \n ${player1}. \n Player 2 gets the following cards:  \n ${player2}. \n Player 3 gets the following cards:  \n ${player3}. \n The skat is:  \n ${skat} \n`;
