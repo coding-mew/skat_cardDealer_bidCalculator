@@ -34,9 +34,9 @@ const randomDeck = (array)=> {
     return `\n Player 1 gets the following cards: \n ${player1}. \n  \n Player 2 gets the following cards:  \n ${player2}. \n  \n Player 3 gets the following cards:  \n ${player3}. \n  \n The skat is:  \n ${skat} \n`;
   }
  
-  console.log(randomDeck(cardDeck));
+ 
   console.log(cardDeck);
-
+ console.log(randomDeck(cardDeck));
 
   
 

@@ -63,7 +63,8 @@ const bidCalculatorSkat = (color, ...jacks) => {
       !jacks.includes("hearts")) 
       ||
     // ohne zwei spiel 3
-    (!jacks.includes("clubs") && !jacks.includes("spades")
+    (!jacks.includes("clubs") && 
+    !jacks.includes("spades")
     && jacks.includes("hearts"))
   ) {
     y = 3;
@@ -73,8 +74,8 @@ const bidCalculatorSkat = (color, ...jacks) => {
   if (
     (!jacks.includes("clubs") &&
       !jacks.includes("spades") &&
-      !jacks.includes("hearts")
-      && jacks.includes("diamonds")) 
+      !jacks.includes("hearts") &&
+      jacks.includes("diamonds")) 
       ||
     //mit 3 spiel 4
     (jacks.includes("clubs") &&
@@ -114,6 +115,8 @@ console.log(bidCalculatorSkat("null ouvert hand"));
 
 
 //checking y
+console.log(bidCalculatorSkat("diamonds", "clubs")); 
+console.log(bidCalculatorSkat("hearts", "clubs")); 
 console.log(bidCalculatorSkat("clubs", "clubs", "spades")); 
 console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts")); 
 console.log(bidCalculatorSkat("clubs", "hearts", "diamonds"));
@@ -121,4 +124,4 @@ console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts"))
 console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts", "diamonds"));
 ;
 
-console.log(bidCalculatorSkat("clubs")); 
+console.log(bidCalculatorSkat("grand")); 
