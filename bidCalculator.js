@@ -80,13 +80,13 @@ const bidCalculatorSkat = (color, ...jacks) => {
     y = 4;
     return x * y;
   }
-  // without 4, play 5
+  // with 4, play 5
   if (
     (jacks.includes("clubs") &&
       jacks.includes("spades") &&
       jacks.includes("hearts") &&
       jacks.includes("diamonds")) ||
-    // with 4, play 5
+    // without 4, play 5
     !jacks.length
   ) {
     y = 5;
@@ -112,7 +112,5 @@ console.log(bidCalculatorSkat("clubs", "clubs", "spades"));
 console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts"));
 console.log(bidCalculatorSkat("clubs", "hearts", "diamonds"));
 console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts"));
-console.log(
-  bidCalculatorSkat("clubs", "clubs", "spades", "hearts", "diamonds")
-);
+console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts", "diamonds"));
 console.log(bidCalculatorSkat("grand"));
