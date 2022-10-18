@@ -8,36 +8,37 @@ let cardDeck =
 
 
 // 2. randomize cardDeck
-function randomDeck(array) {
-    // starting from the end of the array
+const randomDeck = (array)=> {
+    // starting from the end of the cardDeck-array
     let currentIndex = array.length;
     let randomIndex;
-    let player1;
-    let player2;
-    let player3;
-    let skat
-  // 2.1 function will only be called until the index =0
+    let player1, player2, player3, skat;
+    // 2.1 function will only be called until the index =0
     while (currentIndex != 0) {
   
-      // 2.2 picks a remaining element.
+    // 2.2 pick a remaining element.
       randomIndex = Math.floor(Math.random() * currentIndex);
+    // 2.3 counting downwards from array.length
       currentIndex--;
   
-      // 2.3 swap randomelement with the current one
+    // 2.4 swap randomelement with the current one
       [array[currentIndex], array[randomIndex]] 
       = 
       [ array[randomIndex], array[currentIndex]];
     }
-    // 2.4 slice the array to deal 10 cards/person + 2 for skat
+    // 2.5 slice the array to deal 10 cards/person + 2 for skat
     player1 = array.slice(0,10)
     player2 = array.slice(10,20)
     player3 = array.slice(20,30)
     skat = array.slice(30,32)
 
+    // 3. return shuffled array, sliced and formatted to the needs.
     return `\n Player 1 gets the following cards: \n ${player1}. \n  \n Player 2 gets the following cards:  \n ${player2}. \n  \n Player 3 gets the following cards:  \n ${player3}. \n  \n The skat is:  \n ${skat} \n`;
   }
  
   console.log(randomDeck(cardDeck));
   console.log(cardDeck);
 
+
+  
 
