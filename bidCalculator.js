@@ -12,7 +12,7 @@ const bidCalculatorSkat = (color, ...jacks) => {
     return item;
   });
 
-  // Defining x by the color you want to play
+  // 1. DEFINING X - by the color you want to play
   if (color === "grand") {
     x = 24;
   }
@@ -28,7 +28,7 @@ const bidCalculatorSkat = (color, ...jacks) => {
   if (color === "diamonds") {
     x = 9;
   }
-  // defining specials: null, null hand, null ouvert and null ouvert hand
+  // 2. DEFINING specials modes: null, null hand, null ouvert and null ouvert hand
   if (color === "null") {
     return 23;
   }
@@ -42,7 +42,7 @@ const bidCalculatorSkat = (color, ...jacks) => {
     return 59;
   }
 
-  // Finding y
+  // DEFINING Y - by amount and color of the Jacks
   // with 1, play 2
   if (
     (jacks.includes("clubs") && !jacks.includes("spades")) ||
