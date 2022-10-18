@@ -45,55 +45,49 @@ const bidCalculatorSkat = (color, ...jacks) => {
   // Finding y
   // with 1, play 2
   if (
-    (jacks.includes("clubs") && !jacks.includes("spades"))
-     ||
+    (jacks.includes("clubs") && !jacks.includes("spades")) ||
     // without 1, play 2
     (!jacks.includes("clubs") && jacks.includes("spades"))
   ) {
     y = 2;
     return x * y;
   }
-
   // with 2, play 3
   if (
     (jacks.includes("clubs") &&
       jacks.includes("spades") &&
-      !jacks.includes("hearts")) 
-      ||
+      !jacks.includes("hearts")) ||
     // without 2, play 3
-    (!jacks.includes("clubs") && 
-    !jacks.includes("spades")
-    && jacks.includes("hearts"))
+    (!jacks.includes("clubs") &&
+      !jacks.includes("spades") &&
+      jacks.includes("hearts"))
   ) {
     y = 3;
     return x * y;
   }
-  // without 3, play 4
+  // with 3, play 4
   if (
-    (!jacks.includes("clubs") &&
-      !jacks.includes("spades") &&
-      !jacks.includes("hearts") &&
-      jacks.includes("diamonds")) 
-      ||
-      // with 3, play 4
     (jacks.includes("clubs") &&
       jacks.includes("spades") &&
       jacks.includes("hearts") &&
-      !jacks.includes("diamonds"))
+      !jacks.includes("diamonds")) ||
+    // without 3, play 4
+    (!jacks.includes("clubs") &&
+      !jacks.includes("spades") &&
+      !jacks.includes("hearts") &&
+      jacks.includes("diamonds"))
   ) {
     y = 4;
     return x * y;
   }
   // without 4, play 5
   if (
-
-    (!jacks.length)
-      ||
-  // with 4, play 5
     (jacks.includes("clubs") &&
       jacks.includes("spades") &&
       jacks.includes("hearts") &&
-      jacks.includes("diamonds"))
+      jacks.includes("diamonds")) ||
+    // with 4, play 5
+    !jacks.length
   ) {
     y = 5;
     return x * y;
@@ -111,13 +105,14 @@ console.log(bidCalculatorSkat("null hand"));
 console.log(bidCalculatorSkat("null ouvert", "spades", "diamonds"));
 console.log(bidCalculatorSkat("null ouvert hand"));
 
-
 //checking Jacks
-console.log(bidCalculatorSkat("diamonds", "clubs")); 
-console.log(bidCalculatorSkat("hearts", "clubs")); 
-console.log(bidCalculatorSkat("clubs", "clubs", "spades")); 
-console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts")); 
+console.log(bidCalculatorSkat("diamonds", "clubs"));
+console.log(bidCalculatorSkat("hearts", "clubs"));
+console.log(bidCalculatorSkat("clubs", "clubs", "spades"));
+console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts"));
 console.log(bidCalculatorSkat("clubs", "hearts", "diamonds"));
-console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts"))
-console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts", "diamonds"));
-console.log(bidCalculatorSkat("grand")); 
+console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts"));
+console.log(
+  bidCalculatorSkat("clubs", "clubs", "spades", "hearts", "diamonds")
+);
+console.log(bidCalculatorSkat("grand"));
