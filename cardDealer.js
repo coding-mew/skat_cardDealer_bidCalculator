@@ -34,7 +34,7 @@ function randomDeck(array) {
     player3 = array.slice(20,30)
     skat = array.slice(30,32)
 
-    return `\n Player 1 gets the following cards: \n ${player1}. \n Player 2 gets the following cards:  \n ${player2}. \n Player 3 gets the following cards:  \n ${player3}. \n The skat is:  \n ${skat} \n`;
+    return `\n Player 1 gets the following cards: \n ${player1}. \n  \n Player 2 gets the following cards:  \n ${player2}. \n  \n Player 3 gets the following cards:  \n ${player3}. \n  \n The skat is:  \n ${skat} \n`;
   }
  
   console.log(randomDeck(cardDeck));
