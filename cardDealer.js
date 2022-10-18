@@ -1,10 +1,10 @@
 // 1. array with all available cards
 
 let cardDeck = 
-["Hearts 7", "Hearts 8", "Hearts 9", "Hearts 10", "Hearts J", "Hearts Q", "Hearts K", "Hearts A",
-"Diamonds 7", "Diamonds 8", "Diamonds 9", "Diamonds 10", "Diamonds J", "Diamonds Q", "Diamonds K", "Diamonds A",
+["Clubs 7", "Clubs 8", "Clubs 9", "Clubs 10", "Clubs J", "Clubs Q", "Clubs K", "Clubs A",
 "Spades 7", "Spades 8", "Spades 9", "Spades 10", "Spades J", "Spades Q", "Spades K", "Spades A",
-"Clubs 7", "Clubs 8", "Clubs 9", "Clubs 10", "Clubs J", "Clubs Q", "Clubs K", "Clubs A"];
+"Hearts 7", "Hearts 8", "Hearts 9", "Hearts 10", "Hearts J", "Hearts Q", "Hearts K", "Hearts A",
+"Diamonds 7", "Diamonds 8", "Diamonds 9", "Diamonds 10", "Diamonds J", "Diamonds Q", "Diamonds K", "Diamonds A"];
 
 
 // 2. randomize cardDeck
