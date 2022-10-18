@@ -15,12 +15,10 @@ const randomDeck = (array)=> {
     let player1, player2, player3, skat;
     // 2.1 function will only be called until the index =0
     while (currentIndex != 0) {
-  
     // 2.2 pick a remaining element.
       randomIndex = Math.floor(Math.random() * currentIndex);
     // 2.3 counting downwards from array.length
       currentIndex--;
-  
     // 2.4 swap randomelement with the current one
       [array[currentIndex], array[randomIndex]] 
       = 

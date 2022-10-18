@@ -14,10 +14,7 @@ const bidCalculatorSkat = (color, ...jacks) => {
     item = item.toLowerCase();
     return item;
   });
-  console.log(jacks);
-  console.log(color)
-
-  // Finding x
+  // Defining x by the color you want to play
   if (color === "grand") {
     x = 24;
   }
@@ -124,4 +121,4 @@ console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts"))
 console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts", "diamonds"));
 ;
 
-console.log(bidCalculatorSkat("clubs")); //60
+console.log(bidCalculatorSkat("clubs")); 
