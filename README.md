@@ -10,5 +10,5 @@ A Vanilla JavaScript programm that helps to play the game Skat:
 
 
 
-> for general information on how to play the game look e.g. here: 
+> 3. For general information on how to play the game look e.g. here: 
   >   https://gamerules.com/rules/skat-card-game/
