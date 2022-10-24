@@ -111,6 +111,5 @@ console.log(bidCalculatorSkat("hearts", "clubs"));
 console.log(bidCalculatorSkat("clubs", "clubs", "spades"));
 console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts"));
 console.log(bidCalculatorSkat("clubs", "hearts", "diamonds"));
-console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts"));
 console.log(bidCalculatorSkat("clubs", "clubs", "spades", "hearts", "diamonds"));
 console.log(bidCalculatorSkat("grand"));
